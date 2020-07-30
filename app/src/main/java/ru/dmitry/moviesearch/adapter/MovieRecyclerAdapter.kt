@@ -9,10 +9,12 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.layout_movie_list_item.view.*
 import ru.dmitry.moviesearch.R
 import ru.dmitry.moviesearch.model.Movie
+import java.util.*
 
 class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var items: List<Movie> = ArrayList()
+    private var items = mutableListOf<Movie>()
+    private var itemsCopy = mutableListOf<Movie>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MovieViewHolder(
@@ -33,7 +35,8 @@ class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun submitList(movieList: List<Movie>) {
-        items = movieList
+        items = movieList as MutableList<Movie>
+        itemsCopy = items.toMutableList()
     }
 
     class MovieViewHolder constructor(
@@ -58,4 +61,20 @@ class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
+
+    fun filter(text: String) {
+        var text = text
+        items.clear()
+        if (text.isEmpty()) {
+            items.addAll(0, itemsCopy)
+        } else {
+            text = text.toLowerCase()
+            for (item in itemsCopy) {
+                if (item.title.toLowerCase().contains(text)) {
+                    items.add(item)
+                }
+            }
+        }
+        notifyDataSetChanged()
+    }
 }
