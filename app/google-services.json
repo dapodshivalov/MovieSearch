@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "2295158433",
+    "firebase_url": "https://moviesearch-cf07f.firebaseio.com",
+    "project_id": "moviesearch-cf07f",
+    "storage_bucket": "moviesearch-cf07f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2295158433:android:d6203a63656364582a82e0",
+        "android_client_info": {
+          "package_name": "ru.dmitry.moviesearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2295158433-c2lhvt5u7fuah6hnuc6nsp8k3ijcpblj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbeAB-PsexHXONfBRsiMJIMCMKNlv-Csg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2295158433-c2lhvt5u7fuah6hnuc6nsp8k3ijcpblj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
